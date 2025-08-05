@@ -15,35 +15,53 @@ class Base_class {
 	}
 };
 class Triangle : public Base_class {
-	public:
-		void findArea() {
-			std::cout << "Area of Triangle is " << (0.5 * base * height) << std::endl;
-		}
-		void perimeter() {
-			double c= std::sqrt((base*base) + (height*height));
-			std::cout << "Perimeter of triangle is " << (base + height + c) << std::endl;
-		}
-        
+	public:	
+	Triangle(){
+		base = 10; height = 2;
+	}
+	void findArea() {
+		std::cout << "Area of Triangle is " << (0.5 * base * height) << std::endl;
+	}
+	void perimeter() {
+		double c= std::sqrt((base*base) + (height*height));
+		std::cout << "Perimeter of triangle is " << (base + height + c) << std::endl;
+	}
 };
 class Rectangle : public Base_class {
-	public:
-		void findArea() {
-			std::cout << "Area of Rectangle is " << (width * length) << std::endl;
-		}
-		void perimeter() {
-			std::cout << "Perimeter of Rectangle is " << (2 * (width + length)) << std::endl;
-		}
+	public:	
+	Rectangle(){
+		width = 5; length = 10;
+	}
+	void findArea(){
+		std::cout << "Area of rectangle is " << (width * length) << std::endl;
+	}
+	void perimeter(){
+		std::cout << "Perimeter of rectangle is " << (2*(width+length)) << std::endl;
+	}
 };
 class Circle : public Base_class {
-	public:
-		void findArea() {
-			std::cout << "Area of Circle is " << (3.14 * radius * radius) << std::endl;
-		}
-		void perimeter() {
-			std::cout << "Perimeter of Circle is " << (2.0 * 3.14 * radius) << std::endl;
-		}
+	public:	
+	Circle(double rr){
+		radius = rr;
+	}
+	void findArea() {
+		std::cout << "Area of circle is " << (3.14 * radius * radius) << std::endl;
+	}
+	void perimeter() {
+		std::cout << "Perimeter of cicle is " << (2.0 * 3.14 * radius) << std::endl;
+	}
 };
 
 int main() {
+	Triangle tr;
+	tr.findArea();
+	tr.perimeter();
 	
+	Rectangle rec;
+	rec.findArea();
+	rec.perimeter();
+	
+	Circle cr(10);
+	cr.findArea();
+	cr.perimeter();
 }
